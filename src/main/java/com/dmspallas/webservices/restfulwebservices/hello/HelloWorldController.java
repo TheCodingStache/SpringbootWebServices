@@ -1,6 +1,5 @@
 package com.dmspallas.webservices.restfulwebservices.hello;
 
-import com.dmspallas.webservices.restfulwebservices.hello.HelloWorldBean;
 import org.springframework.web.bind.annotation.*;
 
 @RestController

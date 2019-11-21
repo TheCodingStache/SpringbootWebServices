@@ -24,9 +24,17 @@ public class UserResource {
     public User retrieveUser(@PathVariable int id) {
         User user = service.findUser(id);
         if (user == null) {
-            throw new UserNotFoundException("id-  " + id);
+            throw new UserNotFoundException("id-    " + id);
         }
-        return user;
+        return service.findUser(id);
+    }
+
+    @DeleteMapping("/users/{id}")
+    public void deleteUser(@PathVariable int id) {
+        User user = service.deleteUserById(id);
+        if (user == null) {
+            throw new UserNotFoundException("id-    " + id);
+        }
     }
 
     //Created & Return the created URI
