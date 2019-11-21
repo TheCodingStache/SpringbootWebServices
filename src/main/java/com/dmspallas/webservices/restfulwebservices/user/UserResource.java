@@ -1,5 +1,7 @@
 package com.dmspallas.webservices.restfulwebservices.user;
 
+import org.springframework.hateoas.EntityModel;
+import org.springframework.hateoas.server.mvc.ControllerLinkBuilder;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -22,12 +24,19 @@ public class UserResource {
     }
 
     @GetMapping("/users/{id}")
-    public User retrieveUser(@PathVariable int id) {
+    public EntityModel<User> retrieveUser(@PathVariable int id) {
         User user = service.findUser(id);
         if (user == null) {
             throw new UserNotFoundException("id-    " + id);
         }
-        return service.findUser(id);
+        //*Using HATEOAS to create links that point other resources that are related*//
+        EntityModel<User> entityModel = new EntityModel<>(user);
+        ControllerLinkBuilder linkTo =
+                ControllerLinkBuilder.linkTo(ControllerLinkBuilder
+                        .methodOn(this.getClass())
+                        .retrieveUsers());
+        entityModel.add(linkTo.withRel("all-users"));
+        return entityModel;
     }
 
     @DeleteMapping("/users/{id}")

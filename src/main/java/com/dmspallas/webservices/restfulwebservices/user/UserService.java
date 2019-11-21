@@ -11,7 +11,7 @@ import java.util.List;
 @Component
 public class UserService {
     private static List<User> users = new ArrayList<>();
-    private static int usersCount = 3;
+    private int usersCount = 0;
 
     static {
         users.add(new User(1, "Dimitris", new Date()));
@@ -27,7 +27,8 @@ public class UserService {
     }
 
     public User saveUser(User user) {
-        if (user.getId() == null) {
+        usersCount = user.getId();
+        if (user.getId() != null) {
             user.setId(++usersCount);
         }
         users.add(user);
