@@ -1,6 +1,5 @@
 package com.dmspallas.webservices.restfulwebservices.user;
 
-import com.dmspallas.webservices.restfulwebservices.user.User;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
