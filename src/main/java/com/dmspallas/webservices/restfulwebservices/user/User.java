@@ -40,7 +40,7 @@ public class User {
         return "User{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", datebirth=" + birthDate +
+                ", dateOfBirth=" + birthDate +
                 '}';
     }
 
