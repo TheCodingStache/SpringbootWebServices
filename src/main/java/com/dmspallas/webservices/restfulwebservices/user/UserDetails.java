@@ -1,4 +1,4 @@
-package com.dmspallas.webservices.restfulwebservices.filtering;
+package com.dmspallas.webservices.restfulwebservices.user;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
