@@ -15,7 +15,7 @@ public class VersioningController {
     public ItemDetails itemDetails() {
         return new ItemDetails("Samsung Galaxy Note 10+", "50", "1500");
     }
-    //Versioning using parameters
+    //Versioning using request parameters
     @GetMapping(value = "/info/param", params = "version=1")
     public Items parameterV1() {
         return new Items(new Info("Rolex Watch Date-Time", "15", "50000"));
