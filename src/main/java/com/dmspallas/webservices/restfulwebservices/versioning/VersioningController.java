@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class VersioningController {
-
+    //Uri Versioning
     @GetMapping("/info/items")
     public Items items() {
         return new Items(new Info("Samsung Galaxy Note 10+", "50", "1500"));
@@ -15,7 +15,7 @@ public class VersioningController {
     public ItemDetails itemDetails() {
         return new ItemDetails("Samsung Galaxy Note 10+", "50", "1500");
     }
-
+    //Versioning using parameters
     @GetMapping(value = "/info/param", params = "version=1")
     public Items parameterV1() {
         return new Items(new Info("Rolex Watch Date-Time", "15", "50000"));
