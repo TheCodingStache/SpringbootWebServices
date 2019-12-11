@@ -13,7 +13,8 @@ import java.util.List;
 
 @RestController
 public class UserResource {
-    private final UserService service;
+    @Autowired
+    private UserService service;
 
     public UserResource(UserService service) {
         this.service = service;
