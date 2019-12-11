@@ -1,9 +1,7 @@
 package com.dmspallas.webservices.restfulwebservices.database;
 
-import com.dmspallas.webservices.restfulwebservices.user.ExceptionResponse;
 import com.dmspallas.webservices.restfulwebservices.user.User;
 import com.dmspallas.webservices.restfulwebservices.user.UserNotFoundException;
-import com.dmspallas.webservices.restfulwebservices.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.server.mvc.ControllerLinkBuilder;
